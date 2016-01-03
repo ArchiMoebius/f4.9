@@ -1,0 +1,15 @@
+make clean
+rm datadecode.txt
+make target=f5 D="utils f5 BitStream DCTStream" out=main
+
+#../bin/main -e -i ../data/data.txt -c ../data/chicken.jpeg > encode
+../bin/main -e -i ../data/novel.txt -c ../data/fireHeartBlueHands.jpg > encode
+
+#../bin/main -d -i ../data/chicken.jpeg_100_q_31_key_3_k.jpeg -o ./datadecode.txt > decode
+../bin/main -d -i ../data/fireHeartBlueHands.jpg_100_q_31_key_3_k.jpeg -o ./datadecode.txt > decode
+
+#../bin/main -s -i ../data/chicken.jpeg_100_q_31_key_3_k.jpeg -c ../data/chicken.jpeg -o ./datadecode.txt 
+../bin/main -s -i ../data/fireHeartBlueHands.jpg_100_q_31_key_3_k.jpeg -c ../data/fireHeartBlueHands.jpg -o ./datadecode.txt 
+
+#cat datadecode.txt
+echo
